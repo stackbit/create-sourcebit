@@ -1,0 +1,43 @@
+{
+  "name": "create-sourcebit",
+  "version": "0.1.0",
+  "description": "Create and configure a Sourcebit installation",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "chalk": "^3.0.0",
+    "inquirer": "^7.0.3",
+    "ora": "^4.0.3"
+  },
+  "devDependencies": {
+    "husky": "^4.0.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "test": "npm run format",
+    "format": "prettier --write \"./**/*.{js,jsx,md,html}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackbithq/sourcebit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stackbithq/sourcebit/issues"
+  },
+  "homepage": "https://github.com/stackbithq/sourcebit#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,html}": [
+      "npm run format",
+      "git add"
+    ]
+  }
+}
