@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const chalk = require("chalk");
 const fs = require("fs");
+const ora = require("ora");
 const path = require("path");
 const util = require("util");
 const Wizard = require("./lib/wizard");
@@ -16,13 +17,15 @@ const Wizard = require("./lib/wizard");
   );
   const config = `module.exports = ${moduleExports}\n`;
 
+  console.log("");
+
   // Writing configuration file.
   try {
     const configPath = path.join(process.cwd(), "sourcebit.js");
 
     fs.writeFileSync(configPath, config);
 
-    console.log(`\nConfiguration saved to ${chalk.bold(configPath)}.`);
+    ora(`Configuration saved to ${chalk.bold(configPath)}.\n`).succeed();
   } catch (error) {
     console.log("ERROR: Could not create configuration file.");
 
@@ -40,11 +43,12 @@ const Wizard = require("./lib/wizard");
 
       fs.writeFileSync(envFilePath, envFileData + "\n");
 
-      console.log(`\Environment file saved to ${chalk.bold(envFilePath)}.`);
+      ora(`Environment file saved to ${chalk.bold(envFilePath)}.\n`).succeed();
     }
   } catch (error) {
     console.log(error);
-    console.log("ERROR: Could not create environment file.");
+
+    ora("Could not create environment file.\n").fail();
 
     process.exit(1);
   }
