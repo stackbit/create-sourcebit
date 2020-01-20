@@ -10,6 +10,7 @@
     "axios": "^0.19.1",
     "chalk": "^3.0.0",
     "inquirer": "^7.0.3",
+    "mri": "^1.1.4",
     "ora": "^4.0.3"
   },
   "devDependencies": {

@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 const chalk = require("chalk");
 const fs = require("fs");
+const mri = require("mri");
 const ora = require("ora");
 const path = require("path");
 const util = require("util");
 const Wizard = require("./lib/wizard");
 
 (async () => {
-  const wizard = new Wizard();
+  const parameters = mri(process.argv.slice(2));
+  const wizard = new Wizard(parameters);
   const { plugins, envFileOptions } = await wizard.start();
   const moduleExports = util.inspect(
     {
