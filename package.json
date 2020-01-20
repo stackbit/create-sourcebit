@@ -1,6 +1,6 @@
 {
   "name": "create-sourcebit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create and configure a Sourcebit installation",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,8 @@
     "chalk": "^3.0.0",
     "inquirer": "^7.0.3",
     "mri": "^1.1.4",
-    "ora": "^4.0.3"
+    "ora": "^4.0.3",
+    "sourcebit": "latest"
   },
   "devDependencies": {
     "husky": "^4.0.0",
