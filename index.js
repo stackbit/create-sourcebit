@@ -10,7 +10,7 @@ const Wizard = require("./lib/wizard");
 (async () => {
   const parameters = mri(process.argv.slice(2));
   const wizard = new Wizard(parameters);
-  const { plugins, envFileOptions } = await wizard.start();
+  const { errors, plugins, envFileOptions } = await wizard.start();
   const moduleExports = util.inspect(
     {
       plugins
@@ -27,8 +27,19 @@ const Wizard = require("./lib/wizard");
 
     fs.writeFileSync(configPath, config);
 
-    ora(`Configuration saved to ${chalk.bold(configPath)}.\n`).succeed();
+    const errorCount = Object.keys(errors).length;
+
+    if (errorCount > 0) {
+      ora(
+        `Configuration saved to ${chalk.bold(configPath)}, but ${chalk.bold(
+          errorCount
+        )} ${errorCount > 1 ? "errors" : "error"} occurred.\n`
+      ).warn();
+    } else {
+      ora(`Configuration saved to ${chalk.bold(configPath)}.\n`).succeed();
+    }
   } catch (error) {
+    console.log(error);
     console.log("ERROR: Could not create configuration file.");
 
     process.exit(1);
