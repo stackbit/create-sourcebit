@@ -56,7 +56,12 @@ const Wizard = require("./lib/wizard");
 
       fs.writeFileSync(envFilePath, envFileData + "\n");
 
-      ora(`Environment file saved to ${chalk.bold(envFilePath)}.\n`).succeed();
+      ora(`Environment file saved to ${chalk.bold(envFilePath)}.`).succeed();
+      ora(
+        `Make sure not to commit this file to version control. Perhaps you want to add it to ${chalk.bold(
+          ".gitignore"
+        )}?`
+      ).warn();
     }
   } catch (error) {
     console.log(error);
