@@ -6,7 +6,7 @@
 
 ## Introduction
 
-[Sourcebit](https://github.com/stackbithq/sourcebit) uses a [confifuration file](https://github.com/stackbithq/sourcebit#configuration) of `sourcebit.js` to define and configure all of its plugins. While this file can be created manually, this command-line interface provides an interactive setup that gathers enough information about the user's environment and content architecture to create a working configuration.
+[Sourcebit](https://github.com/stackbithq/sourcebit) uses a [configuration file](https://github.com/stackbithq/sourcebit#configuration) of `sourcebit.js` to define and configure all of its plugins. While this file can be created manually, this command-line interface provides an interactive setup that gathers enough information about the user's environment and content architecture to create a working configuration.
 
 Every Sourcebit plugin must define the questions that should be asked and process the answers. This takes place via the `getSetup` and `getOptionsFromSetup` methods.
 
