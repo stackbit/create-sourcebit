@@ -1,13 +1,12 @@
 {
   "name": "create-sourcebit",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Create and configure a Sourcebit installation",
   "main": "index.js",
   "bin": {
     "create-sourcebit": "./index.js"
   },
   "dependencies": {
-    "axios": "^0.19.1",
     "chalk": "^3.0.0",
     "debug": "^4.1.1",
     "inquirer": "^7.0.3",
@@ -22,7 +21,7 @@
   },
   "scripts": {
     "test": "npm run format",
-    "format": "prettier --write \"./**/*.{js,jsx,md,html}\""
+    "format": "prettier --write \"./**/*.{js,json,jsx,md,html}\""
   },
   "repository": {
     "type": "git",

@@ -10,37 +10,36 @@ Sourcebit uses a [`sourcebit.js` file](https://github.com/stackbithq/sourcebit#c
 
 It's the responsibility of each plugin to define the questions and process the answers, which takes place via the `getSetup` and `getOptionsFromSetup` methods.
 
-## Using local plugins
+## Plugin registry
 
-Normally, the interactive setup process will fetch available plugins from the [npm registry](https://npmjs.com) by looking for packages whose name begin with `sourcebit-source`, `sourcebit-target` or `sourcebit-plugin`. If you are developing a plugin and you'd like for it to appear on the setup process without having to publish it to npm, you can provide a mock response for the npm API.
+The list of plugins offered by the interactive setup process is pulled from the `plugins.json` file in the root of the repository. It's an array of objects with the following properties:
 
-For this, you first need to create a JSON file and add some mock npm modules to it, following the structure below:
+- `module` (String): The name of the plugin's npm module
+  - _Example_: `sourcebit-source-contentful`
+- `description` (String): A human-friendly description of the plugin
+  - _Example_: `A Contentful source plugin for Sourcebit`
+- `author` (String): The name/handle of the plugin's author
+  - _Example_: `John Doe <john.doe@example.com>`
+- `type` (enum: `source|target`): The type of plugin
+  - _Example_: `source`
 
-_my-project/npm-override.json_
+_plugins.json_
 
 ```json
 [
   {
-    "package": {
-      "name": "/Users/johndoe/sourcebit-source-contentful",
-      "version": "0.1.0",
-      "description": "A Contentful source plugin for Sourcebit"
-    }
+    "module": "/Users/eduardoboucas/Sites/sourcebit-source-contentful",
+    "description": "A Contentful source plugin for Sourcebit",
+    "author": "Stackbit",
+    "type": "source"
   },
   {
-    "package": {
-      "name": "/Users/johndoe/sourcebit-target-jekyll",
-      "version": "0.1.0",
-      "description": "A Sourcebit plugin for Jekyll"
-    }
+    "module": "/Users/eduardoboucas/Sites/sourcebit-target-jekyll",
+    "description": "A Sourcebit plugin for Jekyll",
+    "author": "Stackbit",
+    "type": "target"
   }
 ]
 ```
 
-Note that `name` needs to contain an absolute path to the plugin directory.
-
-After creating this file, you can run the setup process with the `--registry-override` parameter like so:
-
-```
-$ npx create-sourcebit --registry-override=./npm-override.json
-```
+If you are developing a plugin and you'd like for it to appear on the setup process without having to publish it to npm, you can add it to this array and set the value of `module` to an absolute path on your filesystem.

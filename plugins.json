@@ -1,0 +1,14 @@
+[
+  {
+    "module": "sourcebit-source-contentful",
+    "description": "A Contentful source plugin for Sourcebit",
+    "author": "Stackbit",
+    "type": "source"
+  },
+  {
+    "module": "sourcebit-target-jekyll",
+    "description": "A Sourcebit plugin for Jekyll",
+    "author": "Stackbit",
+    "type": "target"
+  }
+]
