@@ -1,5 +1,11 @@
 [
   {
+    "module": "sourcebit-sample-plugin",
+    "description": "A sample source plugin with mock data",
+    "author": "Stackbit",
+    "type": "source"
+  },
+  {
     "module": "sourcebit-source-contentful",
     "description": "A Contentful source plugin for Sourcebit",
     "author": "Stackbit",
