@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require("dotenv").config();
 const chalk = require("chalk");
 const fs = require("fs");
 const mri = require("mri");
@@ -8,9 +9,19 @@ const util = require("util");
 const Wizard = require("./lib/wizard");
 
 (async () => {
+  const configPath = path.join(process.cwd(), "sourcebit.js");
+
+  let currentConfig = {};
+
+  try {
+    currentConfig = require(configPath);
+  } catch (_) {}
+
   const parameters = mri(process.argv.slice(2));
   const wizard = new Wizard(parameters);
-  const { errors, plugins, envFileOptions } = await wizard.start();
+  const { errors, plugins, envFileOptions } = await wizard.start({
+    currentConfig
+  });
   const moduleExports = util.inspect(
     {
       plugins
@@ -23,8 +34,6 @@ const Wizard = require("./lib/wizard");
 
   // Writing configuration file.
   try {
-    const configPath = path.join(process.cwd(), "sourcebit.js");
-
     fs.writeFileSync(configPath, config);
 
     const errorCount = Object.keys(errors).length;
