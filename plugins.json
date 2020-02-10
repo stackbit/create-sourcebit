@@ -22,5 +22,11 @@
     "description": "A Sourcebit plugin for Jekyll",
     "author": "Stackbit",
     "type": "target"
+  },
+  {
+    "module": "sourcebit-transform-assets",
+    "description": "Downloads remote assets",
+    "author": "Stackbit",
+    "type": "transform"
   }
 ]
