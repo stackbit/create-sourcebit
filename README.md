@@ -42,4 +42,12 @@ _plugins.json_
 ]
 ```
 
-If you are developing a plugin and you'd like for it to appear on the setup process without having to publish it to npm, you can add it to this array and set the value of `module` to an absolute path on your filesystem.
+### Local plugin registry
+
+You can create your own `plugins.json` file and tell the setup process to use it. This is useful when you're developing a plugin locally and you want it to appear on the list of available plugins without having to publish it to the official registry.
+
+To use a local plugin registry, create a file with the structure above and start the setup process with the `--plugins` flag pointing to its path.
+
+```shell
+npx create-sourcebit --plugins=./my-plugins.json
+```
