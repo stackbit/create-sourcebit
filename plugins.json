@@ -28,5 +28,11 @@
     "description": "Downloads remote assets",
     "author": "Stackbit",
     "type": "transform"
+  },
+  {
+    "module": "sourcebit-target-hugo",
+    "description": "A Sourcebit plugin for Hugo",
+    "author": "Stackbit",
+    "type": "target"
   }
 ]
