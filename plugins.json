@@ -34,5 +34,11 @@
     "description": "A Sourcebit plugin for Hugo",
     "author": "Stackbit",
     "type": "target"
+  },
+  {
+    "module": "sourcebit-target-next",
+    "description": "A Sourcebit plugin for Next.js",
+    "author": "Stackbit",
+    "type": "target"
   }
 ]
