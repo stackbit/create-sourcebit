@@ -18,6 +18,12 @@
     "type": "source"
   },
   {
+    "module": "@kentico/sourcebit-source-kontent",
+    "description": "A Kontent source plugin for Sourcebit",
+    "author": "Kentico",
+    "type": "source"
+  },
+  {
     "module": "sourcebit-target-jekyll",
     "description": "A Sourcebit plugin for Jekyll",
     "author": "Stackbit",
