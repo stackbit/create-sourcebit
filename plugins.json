@@ -1,50 +1,50 @@
 [
-  {
-    "module": "sourcebit-sample-plugin",
-    "description": "A sample source plugin with mock data",
-    "author": "Stackbit",
-    "type": "source"
-  },
-  {
-    "module": "sourcebit-source-contentful",
-    "description": "A Contentful source plugin for Sourcebit",
-    "author": "Stackbit",
-    "type": "source"
-  },
-  {
-    "module": "sourcebit-source-sanity",
-    "description": "A Sanity.io source plugin for Sourcebit",
-    "author": "Stackbit",
-    "type": "source"
-  },
-  {
-    "module": "@kentico/sourcebit-source-kontent",
-    "description": "A Kontent source plugin for Sourcebit",
-    "author": "Kentico",
-    "type": "source"
-  },
-  {
-    "module": "sourcebit-target-jekyll",
-    "description": "A Sourcebit plugin for Jekyll",
-    "author": "Stackbit",
-    "type": "target"
-  },
-  {
-    "module": "sourcebit-transform-assets",
-    "description": "Downloads remote assets",
-    "author": "Stackbit",
-    "type": "transform"
-  },
-  {
-    "module": "sourcebit-target-hugo",
-    "description": "A Sourcebit plugin for Hugo",
-    "author": "Stackbit",
-    "type": "target"
-  },
-  {
-    "module": "sourcebit-target-next",
-    "description": "A Sourcebit plugin for Next.js",
-    "author": "Stackbit",
-    "type": "target"
-  }
+    {
+        "module": "sourcebit-sample-plugin",
+        "description": "A sample source plugin with mock data",
+        "author": "Stackbit",
+        "type": "source"
+    },
+    {
+        "module": "sourcebit-source-contentful",
+        "description": "A Contentful source plugin for Sourcebit",
+        "author": "Stackbit",
+        "type": "source"
+    },
+    {
+        "module": "sourcebit-source-sanity",
+        "description": "A Sanity.io source plugin for Sourcebit",
+        "author": "Stackbit",
+        "type": "source"
+    },
+    {
+        "module": "@kentico/sourcebit-source-kontent",
+        "description": "A Kontent source plugin for Sourcebit",
+        "author": "Kentico",
+        "type": "source"
+    },
+    {
+        "module": "sourcebit-target-jekyll",
+        "description": "A Sourcebit plugin for Jekyll",
+        "author": "Stackbit",
+        "type": "target"
+    },
+    {
+        "module": "sourcebit-transform-assets",
+        "description": "Downloads remote assets",
+        "author": "Stackbit",
+        "type": "transform"
+    },
+    {
+        "module": "sourcebit-target-hugo",
+        "description": "A Sourcebit plugin for Hugo",
+        "author": "Stackbit",
+        "type": "target"
+    },
+    {
+        "module": "sourcebit-target-next",
+        "description": "A Sourcebit plugin for Next.js",
+        "author": "Stackbit",
+        "type": "target"
+    }
 ]
