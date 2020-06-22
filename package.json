@@ -1,54 +1,56 @@
 {
-  "name": "create-sourcebit",
-  "version": "0.9.0",
-  "description": "Create and configure a Sourcebit installation",
-  "main": "index.js",
-  "bin": {
-    "create-sourcebit": "./index.js"
-  },
-  "dependencies": {
-    "chalk": "^3.0.0",
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
-    "inquirer": "^7.0.3",
-    "mri": "^1.1.4",
-    "ora": "^4.0.3",
-    "sourcebit": "^0.2.2"
-  },
-  "devDependencies": {
-    "husky": "^4.2.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
-  },
-  "scripts": {
-    "test": "npm run format",
-    "format": "prettier --write \"./**/*.{js,json,jsx,md,html}\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stackbithq/sourcebit.git"
-  },
-  "keywords": [
-    "headless",
-    "headless-cms",
-    "jamstack",
-    "ssg"
-  ],
-  "author": "Stackbit",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stackbithq/sourcebit/issues"
-  },
-  "homepage": "https://github.com/stackbithq/sourcebit#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,md,html}": [
-      "npm run format",
-      "git add"
-    ]
-  }
+    "name": "create-sourcebit",
+    "version": "0.9.0",
+    "description": "Create and configure a Sourcebit installation",
+    "main": "index.js",
+    "bin": {
+        "create-sourcebit": "./index.js"
+    },
+    "dependencies": {
+        "chalk": "^3.0.0",
+        "debug": "^4.1.1",
+        "dotenv": "^8.2.0",
+        "inquirer": "^7.0.3",
+        "mri": "^1.1.4",
+        "ora": "^4.0.3",
+        "sourcebit": "^0.2.2"
+    },
+    "devDependencies": {
+        "@stackbit/prettier-config": "^1.0.0",
+        "husky": "^4.2.0",
+        "lint-staged": "^9.5.0",
+        "prettier": "^1.19.1"
+    },
+    "scripts": {
+        "test": "npm run format",
+        "format": "prettier --write \"./**/*.{js,json,jsx,md,html}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stackbithq/sourcebit.git"
+    },
+    "keywords": [
+        "headless",
+        "headless-cms",
+        "jamstack",
+        "ssg"
+    ],
+    "author": "Stackbit",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/stackbithq/sourcebit/issues"
+    },
+    "homepage": "https://github.com/stackbithq/sourcebit#readme",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,md,html}": [
+            "npm run format",
+            "git add"
+        ]
+    },
+    "prettier": "@stackbit/prettier-config"
 }

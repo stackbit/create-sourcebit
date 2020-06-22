@@ -14,31 +14,31 @@ Every Sourcebit plugin must define the questions that should be asked and proces
 
 The list of plugins offered by the interactive setup process is pulled from the `plugins.json` file in the root of the repository. It's an array of objects with the following properties:
 
-- `module` (String): The name of the plugin's npm module
-  - _Example_: `sourcebit-source-contentful`
-- `description` (String): A human-friendly description of the plugin
-  - _Example_: `A Contentful source plugin for Sourcebit`
-- `author` (String): The name/handle of the plugin's author
-  - _Example_: `John Doe <john.doe@example.com>`
-- `type` (enum: `source|target`): The type of plugin
-  - _Example_: `source`
+-   `module` (String): The name of the plugin's npm module
+    -   _Example_: `sourcebit-source-contentful`
+-   `description` (String): A human-friendly description of the plugin
+    -   _Example_: `A Contentful source plugin for Sourcebit`
+-   `author` (String): The name/handle of the plugin's author
+    -   _Example_: `John Doe <john.doe@example.com>`
+-   `type` (enum: `source|target`): The type of plugin
+    -   _Example_: `source`
 
 _plugins.json_
 
 ```json
 [
-  {
-    "module": "/Users/eduardoboucas/Sites/sourcebit-source-contentful",
-    "description": "A Contentful source plugin for Sourcebit",
-    "author": "Stackbit",
-    "type": "source"
-  },
-  {
-    "module": "/Users/eduardoboucas/Sites/sourcebit-target-jekyll",
-    "description": "A Sourcebit plugin for Jekyll",
-    "author": "Stackbit",
-    "type": "target"
-  }
+    {
+        "module": "/Users/eduardoboucas/Sites/sourcebit-source-contentful",
+        "description": "A Contentful source plugin for Sourcebit",
+        "author": "Stackbit",
+        "type": "source"
+    },
+    {
+        "module": "/Users/eduardoboucas/Sites/sourcebit-target-jekyll",
+        "description": "A Sourcebit plugin for Jekyll",
+        "author": "Stackbit",
+        "type": "target"
+    }
 ]
 ```
 
