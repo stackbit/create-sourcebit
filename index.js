@@ -5,6 +5,7 @@ const fs = require('fs');
 const mri = require('mri');
 const ora = require('ora');
 const path = require('path');
+const prettier = require('prettier');
 const util = require('util');
 const Wizard = require('./lib/wizard');
 
@@ -28,7 +29,14 @@ const Wizard = require('./lib/wizard');
         },
         { compact: false, depth: null }
     );
-    const config = `module.exports = ${moduleExports}\n`;
+
+    let config = `module.exports = ${moduleExports}\n`;
+
+    try {
+        config = prettier.format(config, { parser: 'babel', trailingComma: 'none' });
+    } catch (error) {
+        ora('Could not format configuration file.').warn();
+    }
 
     console.log('');
 
@@ -48,8 +56,8 @@ const Wizard = require('./lib/wizard');
             ora(`Configuration saved to ${chalk.bold(configPath)}.\n`).succeed();
         }
     } catch (error) {
+        ora('ERROR: Could not create configuration file.').fail();
         console.log(error);
-        console.log('ERROR: Could not create configuration file.');
 
         process.exit(1);
     }
@@ -57,7 +65,7 @@ const Wizard = require('./lib/wizard');
     // Writing env file.
     try {
         const envFileData = Object.keys(envFileOptions)
-            .map(key => `${key}=${envFileOptions[key]}`)
+            .map((key) => `${key}=${envFileOptions[key]}`)
             .join('\n');
 
         if (envFileData.length > 0) {
